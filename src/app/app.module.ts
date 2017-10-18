@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { Subpage1Component } from './subpage1/subpage1.component';
 import { Formpage1Component } from './formpage1/formpage1.component';
+import { Footer1Component } from './footer1/footer1.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Formpage1Component } from './formpage1/formpage1.component';
     HomeComponent,
     AboutComponent,
     Subpage1Component,
-    Formpage1Component
+    Formpage1Component,
+    Footer1Component
   ],
   imports: [
     BrowserModule,
