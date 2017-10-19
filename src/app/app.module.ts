@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { Subpage1Component } from './subpage1/subpage1.component';
 import { Formpage1Component } from './formpage1/formpage1.component';
 import { Footer1Component } from './footer1/footer1.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { Footer1Component } from './footer1/footer1.component';
     AboutComponent,
     Subpage1Component,
     Formpage1Component,
-    Footer1Component
+    Footer1Component,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

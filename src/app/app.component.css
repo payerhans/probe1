@@ -3,13 +3,13 @@
 }
 .logo {
     display: inline-block;
-    margin-bottom: -26px;
+    margin-bottom: -28px;
     position: relative;
 }
 
-.nav1box {
-    
-    height: 75px;
-    margin: 10px;
 
+.header {
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 99;
 }
