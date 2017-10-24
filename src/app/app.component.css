@@ -1,34 +1,9 @@
-.borderredunten {
-    border-bottom: 1px solid red;
-}
-.logo {
-    display: inline-block;
-    margin-bottom: -28px;
-    position: relative;
-}
-
-
-.header {
-    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 99;
-}
-
-
-
-
 .img{
     max-width: 100%;
     transition: all 0.3s ease-out 0s;
 }
 
-a {
-    font-family: 'Raleway', sans-serif;
-    font-size: large;
-    vertical-align: middle;
-    text-transform: uppercase;
-    font-weight: bold;
-}
+
 
 
 

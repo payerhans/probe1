@@ -13,6 +13,7 @@ import { Formpage1Component } from './formpage1/formpage1.component';
 import { Footer1Component } from './footer1/footer1.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SlidersComponent } from './sliders/sliders.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SlidersComponent } from './sliders/sliders.component';
     Formpage1Component,
     Footer1Component,
     PageNotFoundComponent,
-    SlidersComponent
+    SlidersComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
