@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  title = 'Look jQuery Animation working in action!';
 
-  ngOnInit() {
+  public ngOnInit() {
+    $(document).ready(function(){
+      $("button").click(function(){
+          var div = $(".anim");  
+          div.animate({left: '100px'}, "slow");
+          div.animate({fontSize: '5em'}, "slow");
+      });
+  });
   }
 
 }

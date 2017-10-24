@@ -12,6 +12,7 @@ import { Subpage1Component } from './subpage1/subpage1.component';
 import { Formpage1Component } from './formpage1/formpage1.component';
 import { Footer1Component } from './footer1/footer1.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SlidersComponent } from './sliders/sliders.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     Subpage1Component,
     Formpage1Component,
     Footer1Component,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SlidersComponent
   ],
   imports: [
     BrowserModule,
