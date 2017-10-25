@@ -6,6 +6,7 @@ import { Subpage1Component } from './subpage1/subpage1.component';
 import { Formpage1Component } from './formpage1/formpage1.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SlidersComponent } from './sliders/sliders.component';
+import { PhpmailerComponent } from './phpmailer/phpmailer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'subpage1', component: Subpage1Component},
   { path: 'formpage1', component: Formpage1Component},
   { path: 'sliders', component: SlidersComponent},
+  { path: 'phpmailer', component: PhpmailerComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
