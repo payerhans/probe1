@@ -4,6 +4,41 @@ import { HttpModule } from '@angular/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +52,7 @@ import { SlidersComponent } from './sliders/sliders.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PhpmailerComponent } from './phpmailer/phpmailer.component';
 import { PhpmailerService } from './phpmailer/phpmailer.service';
+import { MatFormComponent } from './mat-form/mat-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +65,8 @@ import { PhpmailerService } from './phpmailer/phpmailer.service';
     PageNotFoundComponent,
     SlidersComponent,
     NavigationComponent,
-    PhpmailerComponent
+    PhpmailerComponent,
+    MatFormComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +74,39 @@ import { PhpmailerService } from './phpmailer/phpmailer.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
     BsDatepickerModule.forRoot()
   ],
   providers: [PhpmailerService],
