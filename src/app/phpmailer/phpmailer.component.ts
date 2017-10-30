@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhpmailerService, IMessage } from './phpmailer.service';
+import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { DateAdapter, NativeDateAdapter } from '@angular/material';
 
 @Component({
   selector: 'app-phpmailer',
@@ -7,18 +9,45 @@ import { PhpmailerService, IMessage } from './phpmailer.service';
   styleUrls: ['./phpmailer.component.css']
 })
 export class PhpmailerComponent {
-  title = 'Angular PHP Email Example!';
+  // resForm: FormGroup;
+  title = 'Zimmerreservierung';
   message: IMessage = {};
+  
 
-  constructor(private appService: PhpmailerService) {
 
+  resForm = new FormGroup({
+    name : new FormControl('', [Validators.required]),
+    email : new FormControl('', [Validators.required, Validators.email]),
+    message : new FormControl(''),
+    anreise : new FormControl('', [Validators.required]),
+    abreise : new FormControl('', [Validators.required])
+
+  });
+
+  // email = new FormControl('', [Validators.required, Validators.email]);
+
+  constructor(private appService: PhpmailerService, dateAdapter: DateAdapter<NativeDateAdapter>) {
+    dateAdapter.setLocale('de-DE');
+    /* this.resForm =  fb.group({
+        'IMessage.name': [null, Validators.required],
+        'IMessage.email': [null, Validators.email],
+        'IMessage.message': [null],
+        'IMessage.anreise': [null, Validators.required],
+        'IMessage.abreise': [null, Validators.required]
+    }); */
   }
 
   sendEmail(message: IMessage) {
     this.appService.sendEmail(message).subscribe(res => {
-      console.log('AppComponent Success', res);
+      console.log('PhpmailerComponent Success', res);
+      // return 
     }, error => {
-      console.log('AppComponent Error', error);
+      console.log('PhpMailerComponent Error', error);
     })
   }
+  /* getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.resForm.email.hasError('email') ? 'Not a valid email' :
+            '';
+  } */
 }

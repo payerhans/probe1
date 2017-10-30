@@ -8,7 +8,9 @@ import 'rxjs/add/operator/catch';
 export interface IMessage {
   name?: string,
   email?: string,
-  message?: string
+  message?: string,
+  anreise?: string,
+  abreise?: string
 }
 
 @Injectable()
