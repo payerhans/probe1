@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,41 @@ import { SlidersComponent } from './sliders/sliders.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PhpmailerComponent } from './phpmailer/phpmailer.component';
 import { PhpmailerService } from './phpmailer/phpmailer.service';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CdkTableModule} from '@angular/cdk/table';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatSortModule,
+  MatPaginatorModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -37,7 +72,36 @@ import { PhpmailerService } from './phpmailer/phpmailer.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    BsDatepickerModule.forRoot()
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatSortModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule
   ],
   providers: [PhpmailerService],
   bootstrap: [AppComponent]

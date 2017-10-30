@@ -1,33 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { DateAdapter, NativeDateAdapter } from '@angular/material';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-formpage1',
   templateUrl: './formpage1.component.html',
-  styleUrls: ['./formpage1.component.css']
+  styleUrls: ['./formpage1.component.css'],
+ 
 })
 export class Formpage1Component  {
-
-  minDate = new Date(2017, 5, 10);
-  maxDate = new Date(2018, 9, 15);
-  _bsValue: Date;
-  get bsValue(): Date {
-    return this._bsValue;
+  email = new FormControl('', [Validators.required, Validators.email]);
+  
+  constructor(dateAdapter: DateAdapter<NativeDateAdapter>) {
+    dateAdapter.setLocale('de-DE');
   }
- 
-  set bsValue(v: Date) {
-    console.log(v);
-    this._bsValue = v;
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
   }
- 
-  _bsRangeValue: any = [new Date(2017, 7, 4), new Date(2017, 7, 20)];
-  get bsRangeValue(): any {
-    return this._bsRangeValue;
-  }
- 
-  set bsRangeValue(v: any) {
-    this._bsRangeValue = v;
-  }
- 
-  log(v: any) {console.log(v);}
 
 }
