@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhpmailerService, IMessage } from './phpmailer.service';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { DateAdapter, NativeDateAdapter } from '@angular/material';
 
 @Component({
   selector: 'app-phpmailer',
@@ -8,17 +9,20 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./phpmailer.component.css']
 })
 export class PhpmailerComponent {
-  title = 'Ihre Reservierung';
+  resForm: FormGroup;
+  title = 'Zimmerreservierung';
   message: IMessage = {};
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor(private appService: PhpmailerService) {
-
+  constructor(private appService: PhpmailerService, dateAdapter: DateAdapter<NativeDateAdapter>) {
+    dateAdapter.setLocale('de-DE');
+    
   }
 
   sendEmail(message: IMessage) {
     this.appService.sendEmail(message).subscribe(res => {
       console.log('PhpmailerComponent Success', res);
+      // return 
     }, error => {
       console.log('PhpMailerComponent Error', error);
     })

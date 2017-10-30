@@ -103,7 +103,9 @@ import {
     MatPaginatorModule,
     BrowserAnimationsModule
   ],
-  providers: [PhpmailerService],
+  providers: [
+    PhpmailerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,21 +1,23 @@
-{{title}}
+<h1>{{title}}</h1>
+<div>
+  <h2>…. auf ein „guats Nächtle“ in freundlichen Gästezimmern:</h2>
+  Familiäre Atmosphäre und persönliches Service schaffen beste Voraussetzungen für einen angenehmen Aufenthalt in unserem Haus.
+  <ul>
+    <li>7 Doppelzimmer mit Dusche, WC, TV, Balkon</li>
+    <li>1 Einzelzimmer mit Dusche WC, TV</li>
+    <li>auf Anfrage auch Dreibettzimmer</li>
+  </ul>
+  
+  <h2>Preise:</h2>
+  <ul>
+    <li>Doppelzimmer mit Frühstück: €27 pro Person und Nächtigung</li>
+    <li>Einzelzimmer mit Frühstück: €32 pro Person und Nächtigung</li>
+    <li> Einnachtzuschlag: 3€</li>
+  </ul>
+  Die angegebenen Preise beinhalten Ortstaxe (1,5€) und die Mehrwertsteuer.
+</div>
 
-<!--<form id="contact-form" method="POST" action="assets/email.php">-->
-<!-- <form (submit)="sendEmail(message)">
-  <div>
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Your Name" [(ngModel)]="message.name">
-  </div>
-  <div>
-    <label for="email">Email</label>
-    <input type="text" name="email" placeholder="Your Email" [(ngModel)]="message.email">
-  </div>
-  <div>
-    <label for="message">Message</label>
-    <textarea rows="6" name="message" [(ngModel)]="message.message"></textarea>
-  </div>
-  <button type="submit">Send Email</button>
-</form> -->
+
 <form (submit)="sendEmail(message)">
 <div class="example-container">
     
@@ -30,12 +32,17 @@
     <mat-form-field>
       <textarea matInput placeholder="Ihre Nachricht an uns" name="message" [(ngModel)]="message.message"></textarea>
     </mat-form-field>
-    <!-- <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Anreise">
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" name="anreise" [(ngModel)]="message.anreise"  placeholder="Anreise">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field> -->
-    <button mat-raised-button color="primary" type="submit">Send Email</button>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" name="abreise" [(ngModel)]="message.abreise"  placeholder="Abreise">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="email.hasError('required')" >Send Email</button>
   
     
   </div>
