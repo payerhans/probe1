@@ -12,14 +12,15 @@ if(empty($errors))
 
 	$from_email = $request->email;
 	$message = $request->message;
+	//$s_message = fiter_var($message, FILTER_SANITIZE_STRING);
 	$from_name = $request->name;
 	$anreise = $request->anreise;
 	$abreise = $request->abreise;
 
 	// $to_email = $from_email;
 	$to_email = "hans@net-so.org";
-	
-
+	//TODO: Einleitungstext schreiben, sanitation POST
+	$einleitung = "<div>Wir bestellen das blah, blah ......</div>";
 	$contact = "<p><strong>Name:</strong> $from_name</p>
 							<p><strong>Email:</strong> $from_email</p>";
 	$reisedaten = "<p><strong>Anreise</strong> $anreise </p>";
@@ -30,11 +31,11 @@ if(empty($errors))
 	$email_subject = "$website: Neue Nachricht von $from_name erhalten";
 
 	$email_body = '<html><body>';
-	$email_body .= "$contact $content $reisedaten";
+	$email_body .= "$einleitung $contact $content $reisedaten";
 	$email_body .= '</body></html>';
 
 	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 	$headers .= "From: $from_email\n";
 	$headers .= "Reply-To: $from_email";
 
