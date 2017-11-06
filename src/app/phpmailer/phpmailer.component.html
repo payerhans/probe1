@@ -18,11 +18,11 @@
 </div>
 
 
-<form [formGroup]="resForm" (submit)="sendEmail(message)">
+<form [formGroup]="resForm" (submit)="sendEmailTest(message)">
 <div class="example-container">
     
     <mat-form-field>
-        <input matInput name="name" placeholder="Ihr Name" name="name" formControlName="name">
+        <input matInput  placeholder="Ihr Name" formControlName="name">
         <mat-error>Bitte geben Sie Ihren Namen ein</mat-error>
     </mat-form-field>
     <mat-form-field>
