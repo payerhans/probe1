@@ -26,7 +26,7 @@ export class PhpmailerComponent implements OnInit {
 
   // email = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor(private appService: PhpmailerService, dateAdapter: DateAdapter<NativeDateAdapter>) {
+ constructor(private appService: PhpmailerService, dateAdapter: DateAdapter<NativeDateAdapter>) {
     dateAdapter.setLocale('de-DE');
    
    

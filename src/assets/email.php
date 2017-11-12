@@ -1,5 +1,6 @@
 <?php
-setlocale(LC_TIME, "de_DE");
+//setlocale(LC_TIME, "de_DE");
+setlocale (LC_ALL, 'de_DE');
 header('Content-type: application/json');
 
 $errors = '';
@@ -14,6 +15,7 @@ if(empty($errors))
 	$message = $request->message;
 	//$s_message = fiter_var($message, FILTER_SANITIZE_STRING);
 	$from_name = $request->name;
+	//$anreise = strftime ("%A %e %B %Y", $request->anreise);
 	$anreise = $request->anreise;
 	$abreise = $request->abreise;
 

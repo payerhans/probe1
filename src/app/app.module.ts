@@ -106,7 +106,8 @@ import {
     
   ],
   providers: [
-    PhpmailerService
+    PhpmailerService,
+    
   ],
   bootstrap: [AppComponent]
 })

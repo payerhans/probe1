@@ -17,8 +17,10 @@
   Die angegebenen Preise beinhalten Ortstaxe (1,5€) und die Mehrwertsteuer.
 </div>
 
-
-<form [formGroup]="resForm" (submit)="sendEmail(message)">
+<div *ngIf="!message.name; else forminfo">
+<form [formGroup]="resForm" (submit)="sendEmailTest(message)">
+<!-- <form [formGroup]="resForm" (submit)="sendEmail(message)"> -->
+        
 <div class="example-container">
     
     <mat-form-field>
@@ -52,3 +54,17 @@
     
   </div>
 </form>
+</div>
+
+
+<ng-template #forminfo>
+  
+        <h4>Ihre Anfrage:</h4>
+        <p>Ihr Name:{{ message.name }}</p>
+        <p>Ihre E-Mail Adresse:{{ message.email }}</p>
+        <p>Geplante Anreise:{{ message.anreise }}</p>
+        <p>Gepalte Abreise:{{ message.abreise }}</p>
+<h4>Ihre Nachricht an uns:</h4>
+        <p>{{ message.message }}</p>
+    
+</ng-template>
