@@ -57,6 +57,7 @@ import {
   MatSortModule,
   MatPaginatorModule
 } from '@angular/material';
+import { Formpage1Service } from './formpage1/formpage1.service';
 
 @NgModule({
   declarations: [
@@ -107,11 +108,11 @@ import {
     MatSortModule,
     MatPaginatorModule,
     BrowserAnimationsModule
-    
+
   ],
   providers: [
     PhpmailerService,
-    
+    Formpage1Service,
   ],
   bootstrap: [AppComponent]
 })
