@@ -60,10 +60,10 @@
 <ng-template #forminfo>
   
         <h4>Ihre Anfrage:</h4>
-        <p>Ihr Name:{{ message.name }}</p>
-        <p>Ihre E-Mail Adresse:{{ message.email }}</p>
-        <p>Geplante Anreise:{{ message.anreise }}</p>
-        <p>Gepalte Abreise:{{ message.abreise }}</p>
+        <p>Ihr Name: {{ message.name }}</p>
+        <p>Ihre E-Mail Adresse: {{ message.email }}</p>
+        <p>Geplante Anreise: {{ message.anreise | date: 'fullDate': '' : 'de'}}</p>
+        <p>Gepalte Abreise: {{ message.abreise | date: 'fullDate': '' : 'de' }}</p>
 <h4>Ihre Nachricht an uns:</h4>
         <p>{{ message.message }}</p>
     

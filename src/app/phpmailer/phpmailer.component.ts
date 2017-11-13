@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PhpmailerService, IMessage } from './phpmailer.service';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { DateAdapter, NativeDateAdapter } from '@angular/material';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-phpmailer',
@@ -12,7 +13,6 @@ export class PhpmailerComponent implements OnInit {
   // resForm: FormGroup;
   title = 'Zimmerreservierung';
   message: IMessage = {};
-  
 
 
   resForm = new FormGroup({
@@ -28,8 +28,8 @@ export class PhpmailerComponent implements OnInit {
 
  constructor(private appService: PhpmailerService, dateAdapter: DateAdapter<NativeDateAdapter>) {
     dateAdapter.setLocale('de-DE');
-   
-   
+
+
   }
   ngOnInit() {
     this.message.name = this.resForm.get('name').value;
@@ -48,6 +48,8 @@ export class PhpmailerComponent implements OnInit {
     this.message.abreise = this.resForm.get('abreise').value;
     console.log(message);
     console.log(this.resForm.get('name').value);
+    console.log(this.message.anreise );
+    console.log(this.message.abreise);
   }
 
   sendEmail(message: IMessage) {
