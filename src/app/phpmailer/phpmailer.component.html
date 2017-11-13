@@ -24,7 +24,7 @@
 <div class="example-container">
     
     <mat-form-field>
-        <input matInput  placeholder="Ihr Name" formControlName="name">
+        <input matInput  placeholder="Ihr Name" formControlName="name" >
         <mat-error>Bitte geben Sie Ihren Namen ein</mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -63,7 +63,7 @@
         <p>Ihr Name: {{ message.name }}</p>
         <p>Ihre E-Mail Adresse: {{ message.email }}</p>
         <p>Geplante Anreise: {{ message.anreise | date: 'fullDate': '' : 'de'}}</p>
-        <p>Gepalte Abreise: {{ message.abreise | date: 'fullDate': '' : 'de' }}</p>
+        <p>Geplante Abreise: {{ message.abreise | date: 'fullDate': '' : 'de' }}</p>
 <h4>Ihre Nachricht an uns:</h4>
         <p>{{ message.message }}</p>
     

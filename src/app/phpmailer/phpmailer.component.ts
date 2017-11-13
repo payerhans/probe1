@@ -48,7 +48,7 @@ export class PhpmailerComponent implements OnInit {
     this.message.abreise = this.resForm.get('abreise').value;
     console.log(message);
     console.log(this.resForm.get('name').value);
-    console.log(this.message.anreise );
+    console.log(this.message.anreise);
     console.log(this.message.abreise);
   }
 
@@ -60,10 +60,10 @@ export class PhpmailerComponent implements OnInit {
     this.message.abreise = this.resForm.get('abreise').value;
     this.appService.sendEmail(message).subscribe(res => {
       console.log('PhpmailerComponent Success', res);
-      // return 
+      // return
     }, error => {
       console.log('PhpMailerComponent Error', error);
-    })
+    });
   }
   /* getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :

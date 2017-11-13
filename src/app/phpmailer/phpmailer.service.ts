@@ -6,11 +6,11 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 export interface IMessage {
-  name?: string,
-  email?: string,
-  message?: string,
-  anreise?: string,
-  abreise?: string
+  name?: string;
+  email?: string;
+  message?: string;
+  anreise?: string;
+  abreise?: string;
 }
 
 @Injectable()
@@ -29,7 +29,7 @@ export class PhpmailerService {
       })
       .catch(error => {
         console.log('Sending email got error', error);
-        return Observable.throw(error)
-      })
+        return Observable.throw(error);
+      });
   }
 }
