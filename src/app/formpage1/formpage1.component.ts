@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { DateAdapter, NativeDateAdapter } from '@angular/material';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Formpage1Service, IMessage1 } from './formpage1.service';
 import { DatePipe } from '@angular/common';
@@ -16,7 +17,9 @@ export class Formpage1Component implements OnInit {
 
   nameFormControl = new FormControl ('', [  Validators.required]);
 
-  constructor(private appService: Formpage1Service) {
+  constructor(private appService: Formpage1Service, dateAdapter: DateAdapter<NativeDateAdapter>) {
+    dateAdapter.setLocale('de-DE');
+    
   }
 
   ngOnInit() {
@@ -33,7 +36,7 @@ export class Formpage1Component implements OnInit {
         validators: (Validators.required, Validators.email),
         updateOn: 'change'
       }),
-      anreise: new FormControl ((new Date()).toISOString(), {
+      anreise: new FormControl ( (new Date()).toLocaleDateString("de-DE"), {
         validators: Validators.required,
         updateOn: 'change'
       }),
@@ -42,7 +45,8 @@ export class Formpage1Component implements OnInit {
         
         updateOn: 'change'
       })
-    })
+    });
+    
   }
 
   sendEmailTest(message: IMessage1) {

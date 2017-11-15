@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 /* import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
@@ -113,6 +113,7 @@ import { Formpage1Service } from './formpage1/formpage1.service';
   providers: [
     PhpmailerService,
     Formpage1Service,
+    { provide: LOCALE_ID, useValue: 'de' }
   ],
   bootstrap: [AppComponent]
 })

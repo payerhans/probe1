@@ -4,13 +4,14 @@ import { Observable } from 'rxjs/Observable';
 import { Resolve } from '@angular/router';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { Time } from '@angular/common/src/i18n/locale_data_api';
 
 export interface IMessage1 {
   vorname?: string;
   nachname?:string;
   email?: string;
   message?: string;
-  anreise?: string;
+  anreise?: Date;
   abreise?: string;
 }
 
