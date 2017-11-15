@@ -15,7 +15,7 @@ export class Formpage1Component implements OnInit {
   message: IMessage1 = {};
   nameForm: FormGroup;
 
-  nameFormControl = new FormControl ('', [  Validators.required]);
+  // nameFormControl = new FormControl ('', [  Validators.required]);
 
   constructor(private appService: Formpage1Service, dateAdapter: DateAdapter<NativeDateAdapter>) {
     dateAdapter.setLocale('de-DE');
@@ -48,6 +48,12 @@ export class Formpage1Component implements OnInit {
     });
     
   }
+
+  setTimeFormat(anreise: string) {
+    console.log(anreise);
+    //this.message.anreise = Date.parse(anreise).toLocaleString('de-DE');
+    this.message.anreise = anreise//.toLocaleString('de-DE');
+  };
 
   sendEmailTest(message: IMessage1) {
     console.log(message);
