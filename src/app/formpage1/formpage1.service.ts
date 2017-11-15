@@ -6,9 +6,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 export interface IMessage1 {
-  name?: string;
-  //email?: string;
+  vorname?: string;
+  nachname?:string;
+  email?: string;
   message?: string;
+  anreise?: string;
+  abreise?: string;
 }
 
 @Injectable()

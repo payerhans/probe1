@@ -1,7 +1,7 @@
 {{title}}
 
 <!--<form id="contact-form" method="POST" action="assets/email.php">-->
-<form (submit)="sendEmailTest(message)">
+<!-- <form (submit)="sendEmailTest(message)">
   <!-- <div>
     <label for="name">Name</label>
     <input type="text" name="name" placeholder="Your Name" [(ngModel)]="message.name">
@@ -13,7 +13,7 @@
   <button type="submit">Send Email</button> -->
 
 
-<div class="example-container">
+<!-- <div class="example-container">
   <mat-form-field>
     <input matInput placeholder="Input" name="name" [formControl]="nameFormControl" [(ngModel)] ="message.name">
   <mat-error>Sie müssen einen Namen eingeben</mat-error>
@@ -25,4 +25,44 @@
   <button type="submit">Send Email</button>
   
 </div>
+</form> -->
+
+<form [formGroup]="nameForm" (submit)="sendEmailTest(message)" novalidate>
+  <div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Vorname"  formControlName="vorname" [(ngModel)] ="message.vorname">
+    <mat-error>Sie müssen einen Vornamen eingeben</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Nachname"  formControlName="nachname" [(ngModel)] ="message.nachname">
+      <mat-error>Sie müssen einen Familiennamen eingeben</mat-error>
+    </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Email Adresse" formControlName="email" [(ngModel)] = "message.email">
+      <mat-error>Sie müssen eine E-Mail Adresse eingeben eingeben</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+      <input matInput [matDatepicker]="anreise" placeholder="Anreise" formControlName="anreise" [(ngModel)] = "message.anreise" >
+      <mat-datepicker-toggle matSuffix [for]="anreise"></mat-datepicker-toggle>
+      <mat-datepicker #anreise></mat-datepicker>
+    </mat-form-field>
+
+  <mat-form-field>
+    <input matInput  formControlName="message" [(ngModel)] ="message.message">
+    <mat-error>Sie müssen einen Namen eingeben</mat-error>
+  </mat-form-field>
+  <button  mat-raised-button color="primary" type="submit" [disabled]="!nameForm.valid" >Submit</button>
+</div>
 </form>
+<div *ngIf="nameForm.value.vorname">
+ 
+  <div class="example-container">
+    <h4>Ihre Daten:</h4>
+    <p><strong>Vorname:</strong> {{nameForm.value.vorname}}</p>
+    <p><strong>Nachname:</strong> {{nameForm.value.nachname}}</p>
+    <p><strong>E-Mail:</strong> {{nameForm.value.email}}</p>
+    <p><strong>Nachricht:</strong> {{nameForm.value.message}}</p>
+    <p><strong>Anreise:</strong>> {{nameForm.value.anreise | date: fullDate: '' : 'de'}}</p>
+  </div>
+</div>
