@@ -13,18 +13,24 @@ if(empty($errors))
 	$from_email = $request->email;
 	$message = $request->message;
 	$from_name = $request->name;
+	$from_name = $request->name;
+	$anreise = $request->anreise;
+	$abreise = $request->abreise;
 
-	$to_email = $from_email;
+
+	$to_email = 'hans@net-so.org';
 
 	$contact = "<p><strong>Name:</strong> $from_name</p>
 							<p><strong>Email:</strong> $from_email</p>";
+	$reisedaten = "<p><strong>Anreise</strong> $anreise </p>";
+	//$reisedaten .= "<p><strong>Abreise</strong> $abreise </p>";
 	$content = "<p>$message</p>";
 
 	$website = 'Angular Php Email Example';
 	$email_subject = "$website: Neue Nachricht von $from_name erhalten";
 
 	$email_body = '<html><body>';
-	$email_body .= "$contact $content";
+	$email_body .= "$contact $content $reisedaten";
 	$email_body .= '</body></html>';
 
 	$headers .= "MIME-Version: 1.0\r\n";
@@ -36,6 +42,7 @@ if(empty($errors))
 
 	$response_array['status'] = 'success';
 	$response_array['from'] = $from_email;
+	$response_array['reisedaten'] = $reisedaten;
 	echo json_encode($response_array);
 	echo json_encode($from_email);
 	header($response_array);

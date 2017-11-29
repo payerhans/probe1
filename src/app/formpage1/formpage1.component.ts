@@ -5,6 +5,8 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Formpage1Service, IMessage1 } from './formpage1.service';
 import { DatePipe } from '@angular/common';
 
+
+
 @Component({
   selector: 'app-formpage1',
   templateUrl: './formpage1.component.html',
@@ -14,29 +16,33 @@ export class Formpage1Component implements OnInit {
   title = 'New PHP Email Example!';
   message: IMessage1 = {};
   nameForm: FormGroup;
+  
 
   // nameFormControl = new FormControl ('', [  Validators.required]);
 
   constructor(private appService: Formpage1Service, dateAdapter: DateAdapter<NativeDateAdapter>) {
     dateAdapter.setLocale('de-DE');
+    this.message.anreise = new Date().toLocaleDateString("de-DE");
+    
     
   }
 
   ngOnInit() {
     this.nameForm = new FormGroup ({
       vorname: new FormControl ('', {
-        validators:  Validators.required,
+        //validators:  Validators.required,
         updateOn: 'change'
       }),
       nachname: new FormControl ('', {
-        validators: (Validators.required),
+        //validators: (Validators.required),
         updateOn: 'change'
       }),
       email: new FormControl ('', {
-        validators: (Validators.required, Validators.email),
+        //validators: (Validators.required, Validators.email),
         updateOn: 'change'
       }),
       anreise: new FormControl ( (new Date()).toLocaleDateString("de-DE"), {
+      //anreise: new FormControl ( '', {
         validators: Validators.required,
         updateOn: 'change'
       }),
@@ -49,10 +55,10 @@ export class Formpage1Component implements OnInit {
     
   }
 
-  setTimeFormat(anreise: string) {
+  setTimeFormat(anreise:any) {
     console.log(anreise);
     //this.message.anreise = Date.parse(anreise).toLocaleString('de-DE');
-    this.message.anreise = anreise//.toLocaleString('de-DE');
+    this.message.anreise = anreise.toLocaleString('de-AT');
   };
 
   sendEmailTest(message: IMessage1) {

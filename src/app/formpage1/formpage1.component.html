@@ -18,7 +18,8 @@
   </mat-form-field>
 
   <mat-form-field>
-      <input matInput [matDatepicker]="anreise" placeholder="Anreise"  formControlName="anreise"[ngModel] = "message.anreise" (ngModelChange)="setTimeFormat($event)" >
+      <input matInput [matDatepicker]="anreise" placeholder="Anreise" formControlName="anreise"[ngModel] = "message.anreise" (ngModelChange)="setTimeFormat($event)" >
+      <!-- <input matInput [matDatepicker]="anreise" placeholder="Anreise" formControlName="anreise"[(ngModel)] = "message.anreise" > -->
       <mat-datepicker-toggle matSuffix [for]="anreise"></mat-datepicker-toggle>
       <mat-datepicker #anreise></mat-datepicker>
     </mat-form-field>
@@ -27,6 +28,7 @@
     <input matInput  formControlName="message" [(ngModel)] ="message.message">
     <mat-error>Sie müssen einen Namen eingeben</mat-error>
   </mat-form-field>
+  <!-- <button  mat-raised-button color="primary" type="submit" >Submit</button> -->
   <button  mat-raised-button color="primary" type="submit" [disabled]="!nameForm.valid" >Submit</button>
 </div>
 </form>
